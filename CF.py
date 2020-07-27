@@ -16,7 +16,6 @@ class Conformer(nn.Module):
         ff1_dropout=0.2,
         n_head=4,
         mha_dropout=0.2,
-        epsilon=1e-5,
         kernel_size=3,
         conv_dropout=0.2,
         ff2_hsize=1024,
@@ -52,8 +51,7 @@ class Conformer(nn.Module):
             module=MHAModule(
                 d_model=d_model,
                 n_head=n_head,
-                dropout=mha_dropout,
-                epsilon=epsilon
+                dropout=mha_dropout
             )
         )
         self.conv_module = Residual(

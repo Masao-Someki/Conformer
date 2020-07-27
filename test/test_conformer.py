@@ -13,3 +13,4 @@ def test_conformer():
     # B as batch-size, L as sequence-length, D as feature-dimension.
     out = net(data)
     assert out.shape == (1, 32, conf['d_model'])
+    
