@@ -1,9 +1,11 @@
 # Conformer
-Pytorch implementation of Conformer Block.
-[paper](https://arxiv.org/abs/2005.08100)
+This is a NON-OFFICIAL Pytorch implementation of Conformer.
+Reference : [Conformer: Convolution-augmented Transformer for Speech Recognition](https://arxiv.org/abs/2005.08100)
+
 
 ## Usage
-You can use this Conformer blockr with the following codes.  
+You can use a Conformer block with the following codes.  
+
 ```
 import torch
 import json
