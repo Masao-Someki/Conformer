@@ -1,10 +1,7 @@
 # Conformer implementation with Pytorch
-This is a NON-OFFICIAL Pytorch implementation of Conformer.
+Pytorch implementation of Conformer.
 
 You can use this block to build your own great model!!
-
-Reference : [Conformer: Convolution-augmented Transformer for Speech Recognition](https://arxiv.org/abs/2005.08100)
-
 
 
 ## Model Architecture
