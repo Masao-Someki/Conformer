@@ -26,6 +26,10 @@ class MHAModule(nn.Module):
 
 class RelPositionMultiHeadedAttention(nn.Module):
     """Multi-Head Attention layer with relative position encoding.
+    This class is aquired from 
+    https://github.com/espnet/espnet/blob/master/espnet/nets/pytorch_backend/transformer/attention.py
+    (Apache2.0 Licence) and modified a little by Masao-Someki
+
     Paper: https://arxiv.org/abs/1901.02860
     :param int n_head: the number of head s
     :param int n_feat: the number of features
@@ -172,7 +176,7 @@ class PositionalEmbedding(nn.Module):
         """Positional encoding module.
         This class is aquired from
         https://github.com/huggingface/transformers/blob/master/src/transformers/modeling_transfo_xl.py
-        and modified a little by Masao Someki.
+        (Apache2.0 Licence) and modified a little by Masao Someki.
         """
         super(PositionalEmbedding, self).__init__()
         self.demb = demb
