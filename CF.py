@@ -2,11 +2,11 @@
 import torch
 import torch.nn as nn
 
-from .src import FFModule
-from .src import MHAModule
-from .src import KMeansMHA
-from .src import ConvModule
-from .src import Residual
+from src import FFModule
+from src import MHAModule
+from src import KMeansMHA
+from src import ConvModule
+from src import Residual
 
 
 class Conformer(nn.Module):
@@ -20,9 +20,15 @@ class Conformer(nn.Module):
         kernel_size=3,
         conv_dropout=0,
         ff2_hsize=1024,
-        ff2_dropout=0
-        km_config=None
-        use_kmeans_mha=False
+        ff2_dropout=0,
+        batch_size=None,
+        max_seq_length=512,
+        window_size=128,
+        decay=0.999,
+        kmeans_dropout=0,
+        is_left_to_right=False,
+        is_share_qk=False,
+        use_kmeans_mha=False,
     ):
         """Conformer Block.
 
@@ -56,7 +62,13 @@ class Conformer(nn.Module):
                 module=KMeansMHA(
                     d_model=d_model,
                     n_head=n_head,
-                    config=km_config
+                    batch_size=batch_size,
+                    max_seq_length=max_seq_length,
+                    window_size=window_size,
+                    decay=decay,
+                    dropout=kmeans_dropout,
+                    is_left_to_right=is_left_to_right,
+                    is_share_qk=is_share_qk,
                 )
             )
         else:

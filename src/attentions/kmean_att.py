@@ -34,13 +34,13 @@ class KMeansMHA(nn.Module):
     def __init__(self,
         d_model=512,
         n_head=8,
-        batch_size=32
-        max_seq_length=512
-        window_size=128
-        decay=0.999
-        dropout=0
-        is_left_to_right=False
-        is_share_qk=False
+        batch_size=32,
+        max_seq_length=512,
+        window_size=128,
+        decay=0.999,
+        dropout=0,
+        is_left_to_right=False,
+        is_share_qk=False,
     ):
         super(KMeansMHA, self).__init__()
 
