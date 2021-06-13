@@ -20,7 +20,7 @@ class ConvModule(nn.Module):
     :param int kernel_size: kernerl size of cnn
     """
 
-    def __init__(self, in_channels, kernel_size=3, dropout=0.2, bias=True):
+    def __init__(self, in_channels, kernel_size=3, dropout=0.2, bias=False):
         """Construct an ConvolutionModule object."""
         super(ConvModule, self).__init__()
         # kernerl_size should be a odd number for 'SAME' padding

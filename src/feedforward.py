@@ -3,7 +3,7 @@
 import torch
 import torch.nn as nn
 
-from src import swish
+from .convs import swish
 
 class FFModule(nn.Module):
     def __init__(self, d_model, h_size, dropout=0.2):

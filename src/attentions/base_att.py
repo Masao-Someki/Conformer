@@ -16,7 +16,7 @@ class MHAModule(nn.Module):
         self.mha_RPE = RelPositionMultiHeadedAttention(d_model, dropout=dropout, **kwargs)
         self.dropout = nn.Dropout(dropout)
 
-    def forward(self, inputs, attn_mask=None, mems=None, head_mask=None):
+    def forward(self, inputs, attn_mask=None, mems=None):
         pos_emb = self.pe(inputs[0,:,0])
         x = self.layer_norm(inputs)
         x = self.mha_RPE(x, pos_emb, mems, attn_mask)
